@@ -1,0 +1,30 @@
+<%- include('partial/header');%>
+    <% if(success_message!=''){%>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 500px;margin:5px 32%;">
+            <p><%= success_message %></p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <%}%>
+        <table class="table table-hover" style="width:80%;margin:40px auto;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <tr class="thead-dark">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone No</th>
+            </tr>
+            <% data.forEach(function(ele){ %>
+                <tr onclick="DoNav('/details/<%=ele._id%>')" style="cursor:pointer;"> 
+                    <td style="text-transform: capitalize"><%= ele.Name %></td>
+                    <td  style="text-transform:lowercase"><%= ele.Email %></td>
+                    <td><%= ele.Phoneno %></td>
+                </tr>
+            <% }) %>
+        </table>
+        <script>
+            function DoNav(URL){
+                document.location.href=URL;
+            }
+        </script>
+        
+        <%- include('partial/footer');%>

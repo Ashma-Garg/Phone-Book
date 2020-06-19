@@ -1,0 +1,30 @@
+<%-include('partial/header');%>
+        <div class="container">
+            <p style="font-weight: 400;text-transform: capitalize;font-size:2em"><%=data.Name%></p>
+            <div class="row">
+                <div class="col">
+                    <p style="font-weight: 600;font-size: large;"><%=data.DOB%></p>
+                </div>
+                
+                <div class="col" style="float:right">
+                    <a href="/edit/<%= data._id %>" type="button" class="btn btn-primary">Update</a>
+                    <a href="/delete/<%= data._id %>" type="button" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+            <div class="cont row">
+                <div class="col">
+                    <% data.Phoneno.forEach(function(ele){%>
+                        <p><img src="https://img.icons8.com/ios-glyphs/30/000000/phone-disconnected.png"/>+91 <%=ele%></p>
+                    <%})%>
+                    
+                </div>
+                <div class="col">
+                    <% data.Email.forEach(function(ele){%>
+                        <p  style="text-transform:lowercase;"><img src="https://img.icons8.com/windows/40/000000/email-open.png"/><%=ele%></p>
+                    <%})%>
+                </div>
+                
+            </div>
+        </div>
+
+<%-include('partial/footer');%>

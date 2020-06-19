@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style>
+            li:hover{
+                background-color:#f6f6f6;
+            }
+            .lft{
+                float:right;
+            }
+            #myBtn{
+                position: fixed;
+
+                right: 30px;
+                z-index: 99;
+                bottom:0px;
+                border: none;		
+                outline: none;
+
+                color: white;
+                cursor: pointer;
+                padding: 5px;
+                border-radius: 4px;     
+            }
+            .contain{
+              position:absolute;
+              width:100%;
+              height:92vh;
+              background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSJnZzLkf0HRnJnOEf1cl-OzBIArtQYNZFHkO80huB5W9LoQPp3&usqp=CAU");
+              background-repeat: no-repeat;
+              background-size:cover;
+              animation: animate 20s infinite;
+              padding:10% 0;
+              /* https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRHwpKrtD8aaw9F6JsgiA5_zZJ9_DQZtxVYq3VsSqmDbqZhSGCG&usqp=CAU */
+              
+            }
+            .container{
+                margin:10% 15%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                width:70%;
+                padding:20px;
+                background-color: rgb(199, 235, 229);
+            }
+            .cont{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                position: relative;
+                padding:20px;
+                margin:20px;
+                background-color: white;
+            }
+            input{
+            margin:5px;
+          }
+          nav{
+            z-index: 3;
+          }
+          /* @keyframes animate{
+            0%{
+              background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTGf_NyPNqKnBObW9bLGsFpaW6oxivrewVEWLq3CyCEiLDjrfm3&usqp=CAU");
+            }
+            25%{
+              background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRz7jlQpSbvP7tEDks4wIWsMLO_M9S57_uu8dPK3IqOBtRLz4WK&usqp=CAU");
+            }
+            50%{
+              background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtZFXhBXbyNnql3RFSN_pCJrUIe00iiELoaNhQ9UFlGc30Eykq&usqp=CAU");
+            }
+            75%{
+              background-image: url("https://library.kissclipart.com/20191115/xce/kissclipart-book-icon-phone-icons-icon-telephone-and-phonebook-95cb30e891004432.png");
+            }
+          } */
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"><img src="https://img.icons8.com/ios-glyphs/30/000000/phone-disconnected.png"/>PhoneBook</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#Supported" aria-controls="Support" aria-expanded="true" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="Supported">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">HomePage</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/add">Add Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/AllView">Contacts</a>
+                </li>
+              </ul>
+              <!-- <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Logout</a>
+                  </li>
+              </ul> -->
+            </div>
+          </nav>

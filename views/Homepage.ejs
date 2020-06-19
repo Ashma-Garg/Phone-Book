@@ -1,0 +1,56 @@
+<%- include('partial/header');%>
+<div class="contain"> 
+    <div style="margin:0 36%;">
+        <img class="col-lg-11 col-md-11" src="https://images.cooltext.com/5428851.png">
+    </div>
+    <div style='max-width: 50%;margin:20px 25% 0 25%;padding:10px;'>
+        <form style="overflow:hidden;display:inline;margin:0;">
+            <pre><input style="display:inline-block;" class="form-control col-lg-10 col-md-10" type="text" placeholder="Search" name="search" id="search" onkeyup="myfunc()" autofocus><button  style="display:inline-block;border: none;height:40px;" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/search.png"/></button></pre>
+        </form>
+        <ul style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: white;list-style-type: none;margin:0;max-width:90%;">
+            <% User.forEach(function(ele){%>
+                <li class="hide" onclick="DoNav('/details/<%=ele._id%>')" style="display:none;margin-left:0;max-height:50px;padding:10px;text-transform: capitalize;"><%= ele.Name %> </li>
+            <%})%>
+        </ul>
+    </div>
+    <a href='/allView' type=Button class="btn btn-success" style="margin-left:45%;">View All Contacts</a>
+   
+    <a href='/add' title="Add Contact"><button id="myBtn" style="bottom: 10px;right:10px;"><img src="https://img.icons8.com/ios-filled/35/000000/plus.png"/></button></a>
+</div>
+
+        <script>
+            function DoNav(URL){
+                document.location.href=URL;
+            }
+            function myfunc(){
+                var input, filter, a, i,li, txtValue;
+                input = document.getElementById("search");
+                filter = input.value.toUpperCase();
+                li = document.getElementsByClassName("hide");
+                for (i = 0; i < li.length; i++) {
+
+                    txtValue=li[i].innerText;
+                    
+                    if (txtValue.toUpperCase().startsWith(filter) && filter!='') {
+                        li[i].style.display="block";
+
+                    } else {
+        	            li[i].style.display="none";
+                    }
+                }               
+            }
+            // function insertAfter(ele){
+            //     var id=ele.id;
+            //     console.log('insert after ');
+            //     var x=document.getElementsByClassName(id);
+            //     if(x.style.display=="none"){
+            //         x.style.display="block";
+            //     }
+            //     else{
+            //         x.style.display="none";
+            //     }
+
+            // }
+    
+        </script>
+<%- include('partial/footer');%>
