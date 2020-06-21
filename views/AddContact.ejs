@@ -1,15 +1,21 @@
 <%- include('partial/header');%>
     
       <div style="margin:7% 30%;"  class="col-md-4 col-lg-4 col-sm-4">
+        <div class="alert alert-primary alert-dismissible fade show" role="alert" style="margin:5px 5px;">
+          <p>If data is already present with same phone number and you want to make changes then go to <strong>"Edit"</strong>.</p>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
         <% if(typeof err !='undefined'){ %>
           <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin:5px 5px;">
             <p><%= err %></p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-        </div>
+          </div>
           <br>
-          <% } %>
+        <% } %>
           <% if(typeof success !='undefined'){ %>
             <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin:5px 5px;">
               <p><%= success %></p>
@@ -23,17 +29,17 @@
 
               <div class="form-group">
                 <label for="inputAddress">Name</label>
-                <input style="text-transform: capitalize;" type="text" class="form-control"  placeholder="Enter Name" name="name" required>
+                <input style="text-transform: capitalize;" type="text" class="form-control"  placeholder="Enter Name" name="name" required value="<%= typeof user!='undefined'?user.UserName:'' %>">
               </div>
               <div class="form-group">
                   <label for="inputAddress">Date of Birth</label>
-                  <input type="date" class="form-control"  placeholder="Enter Your DOB" name="DOB" required>
+                  <input type="date" class="form-control"  placeholder="Enter Your DOB" name="DOB" required value="<%= typeof user!='undefined'?user.UserDOB:'' %>">
               </div>
               <div class="form-group">
                   <label for="inputAddress">Phone Number</label>
                   <div class=row>
                     <div id="addph" class="col col-md-11 col-lg-11 col-sm-11">
-                      <input type="number" class="form-control"  placeholder="Enter phoneno" name="phoneno[]" min="9000000000" max="9999999999" required>
+                      <input type="number" class="form-control"  placeholder="Enter phoneno" name="phoneno[]" min="9000000000" max="9999999999" required value="<%= typeof user!='undefined'?user.UserPhone:'' %>">
                     </div>
                     <div class="col col-md-1 col-lg-1 col-sm-1" style="padding: 0;">
                       <img onclick="Addph()" style="float:left;padding-top:7px;" src="https://img.icons8.com/ios-filled/20/000000/plus.png">
@@ -45,7 +51,7 @@
                   <label for="inputEmail4">Email</label>
                   <div class=row>
                     <div id="addem" class="col col-md-11 col-lg-11 col-sm-11">
-                      <input style="text-transform: lowercase;" type="email" class="form-control" name="email[]" required>
+                      <input style="text-transform: lowercase;" type="email" class="form-control" name="email[]" required value="<%= typeof user!='undefined'?user.UserEmail:'' %>">
                     </div>
                     <div class="col col-md-1 col-lg-1 col-sm-1" style="padding: 0;">
                       <img onclick="Addem()" style="float:left;padding-top:7px;" src="https://img.icons8.com/ios-filled/20/000000/plus.png">

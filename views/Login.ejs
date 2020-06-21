@@ -1,0 +1,54 @@
+
+          <%- include('partial/header');%>
+          <div style="margin:0;overflow: hidden;width:100%;height:90vh;background-repeat: no-repeat;background-size: cover;background-image: url(https://d94tn94v8mvlz.cloudfront.net/blog/wp-content/uploads/2019/05/Dialpad.jpg);">
+          <div class="row" style="height: 70%;">
+            <div class="col-1 col-sm-2 col-md-7"></div>
+                <div class="col-10 col-sm-8 col-md-4"  style="padding:20px 0;">
+                    <form style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: white;padding:20px;border-radius: 10px;" method="POST" action="/login">
+                        <% if( failure_message !=''){ %>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <p><%= failure_message %></p>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <% } %>
+                        <% if( success_message !=''){ %>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <p><%= success_message %></p>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <% } %>
+                        <% if(error !=''){ %>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert" style="max-width: 500px;">
+                                <p><%= error %></p>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <% } %>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                        </div>
+                        <!-- <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div> -->
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="/signup">Not Registered?</a>
+                      </form>
+                </div>
+                <div class="col-1 col-sm-2 col-md-1"></div>
+            </div>
+          </div>
+        
+</body>
+</html>
