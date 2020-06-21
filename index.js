@@ -38,11 +38,11 @@ app.use(function(req,res,next){
 });
 app.use(passport.initialize());
 app.use(passport.session());
-var url=process.env.databaseURL;
-// var url='mongodb://localhost/myPhone';
-// var url="mongodb://ashma:ashma@cluster0-shard-00-00-dnxyl.mongodb.net:27017,cluster0-shard-00-01-dnxyl.mongodb.net:27017,cluster0-shard-00-02-dnxyl.mongodb.net:27017/<dbname>?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority";
+var url=process.env.DATABASEURL || "mongodb://localhost/myPhone";
+
 console.log(url);
-mongoose.connect("mongodb://ashma:ashma@cluster0-shard-00-00-dnxyl.mongodb.net:27017,cluster0-shard-00-01-dnxyl.mongodb.net:27017,cluster0-shard-00-02-dnxyl.mongodb.net:27017/<dbname>?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",{useUnifiedTopology: true,useNewUrlParser:true}).then(()=>{
+
+mongoose.connect(url,{useUnifiedTopology: true,useNewUrlParser:true}).then(()=>{
     console.log("DataBase Connected");
 });
 
