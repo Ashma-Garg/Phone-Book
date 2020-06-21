@@ -284,9 +284,9 @@ app.post('/signup',function(req,res){
     if(typeof err=='undefined'){
 
         // Check if Number is already not registered to any other customer(Not in just "LoginUser" but "User" also) who had even multiple numbers registered to their names
-        User.findOne({Phoneno:{$elemMatch:{$eq:phoneno}}},function(err,data){
+        User.findOne({$or:[{Phoneno:{$elemMatch:{$eq:phoneno}}},{Email:{$elemMatch:{$eq:email}}}]},function(err,data){
             if(data){
-                err="PLease Check Your Number";
+                err="Data Already in use";
                 res.render('SignUp',{err:err});
             }
             else if(err) console.log(err);
