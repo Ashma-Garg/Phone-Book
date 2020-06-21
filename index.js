@@ -39,7 +39,7 @@ app.use(function(req,res,next){
 app.use(passport.initialize());
 app.use(passport.session());
 
-var url=process.env.databaseURL;
+var url="mongodb://ashma:%Matters4@cluster0-shard-00-00-dnxyl.mongodb.net:27017,cluster0-shard-00-01-dnxyl.mongodb.net:27017,cluster0-shard-00-02-dnxyl.mongodb.net:27017/<dbname>?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 mongoose.connect(url,{useUnifiedTopology: true,useNewUrlParser:true}).then(()=>{
     console.log("DataBase Connected");
