@@ -39,7 +39,7 @@ app.use(function(req,res,next){
 app.use(passport.initialize());
 app.use(passport.session());
 
-var url=process.env.databaseURL || 'mongodb://localhost/myPhone';
+var url=process.env.databaseURL;
 
 mongoose.connect(url,{useUnifiedTopology: true,useNewUrlParser:true}).then(()=>{
     console.log("DataBase Connected");
